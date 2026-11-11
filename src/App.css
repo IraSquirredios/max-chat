@@ -5,6 +5,22 @@
   padding: 20px;
 }
 
+.mode-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #e9edff;
+  border-radius: 16px;
+}
+
+.mode-panel .hint {
+  margin: 6px 0 0;
+}
+
 .connection-panel {
   display: flex;
   align-items: center;
@@ -223,4 +239,56 @@
   .message {
     max-width: 90%;
   }
+}
+
+.message-time {
+  display: block;
+  margin-top: 6px;
+  color: #526079;
+  font-size: 11px;
+  text-align: right;
+}
+
+.message-date {
+  align-self: center;
+  padding: 6px 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  background: #e3e8f3;
+  color: #526079;
+  font-size: 12px;
+}
+
+.chat-search {
+  display: flex;
+  gap: 6px;
+  padding: 0 16px 12px;
+}
+.chat-search input {
+  min-width: 0;
+  width: 100%;
+}
+.chat-search button {
+  flex-shrink: 0;
+}
+
+.chat-summary { flex: 1; min-width: 0; }
+.chat-summary strong, .chat-preview { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chat-preview { margin-top: 5px; font-size: 12px; color: #526079; }
+.unread-count { flex-shrink: 0; min-width: 24px; padding: 4px 6px; border-radius: 20px; background: #364bd7; color: white; text-align: center; font-size: 12px; }
+.conversation-header { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.conversation-header strong { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.rename-chat { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
+.rename-chat input { flex: 1; min-width: 160px; }
+.message-status { display: block; margin-top: 6px; font-size: 11px; color: #526079; }
+.message-status.unconfirmed { color: #a32929; }
+.mobile-back { display: none; }
+@media (max-width: 700px) {
+  .chat-layout .conversation { display: none; }
+  .chat-layout.mobile-chat-open .sidebar { display: none; }
+  .chat-layout.mobile-chat-open .conversation { display: flex; height: 75dvh; }
+  .mobile-back { display: inline-block; }
+  .chat-list { max-height: none; }
+  .chat-layout { min-height: 65dvh; }
+  .conversation-header { padding: 12px; }
 }
